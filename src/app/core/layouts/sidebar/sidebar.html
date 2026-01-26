@@ -1,0 +1,17 @@
+<ul class="menu w-full grow">
+  <!-- List item -->
+
+  @for (menuItem of menu; track $index) {
+  <li>
+    <button
+      class="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+      data-tip="Homepage"
+    >
+      <i [class]="menuItem?.icon || defaultMenuItemIcon"></i>
+      <span class="is-drawer-close:hidden">
+        {{ menuItem.label }}
+      </span>
+    </button>
+  </li>
+  }
+</ul>
