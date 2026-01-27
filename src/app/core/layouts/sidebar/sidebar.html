@@ -6,6 +6,7 @@
     <button
       class="is-drawer-close:tooltip is-drawer-close:tooltip-right"
       data-tip="Homepage"
+      [routerLink]="menuItem.to"
     >
       <i [class]="menuItem?.icon || defaultMenuItemIcon"></i>
       <span class="is-drawer-close:hidden">
