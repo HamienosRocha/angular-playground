@@ -1,0 +1,15 @@
+<div class="tabs tabs-border">
+  @for (tab of tabs().tabs; track $index) {
+  <input
+    type="radio"
+    class="tab"
+    [name]="tabsId()"
+    [attr.aria-label]="tab.title"
+    (click)="selectTabId(tab.id)"
+    (change)="changeTab(tab)"
+  />
+  <div class="tab-content border-base-300 bg-base-100 p-10">
+    <ng-container *ngTemplateOutlet="getTemplateRef(tab.id)"></ng-container>
+  </div>
+  }
+</div>

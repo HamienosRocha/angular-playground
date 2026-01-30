@@ -5,7 +5,7 @@
   <li>
     <button
       class="is-drawer-close:tooltip is-drawer-close:tooltip-right"
-      data-tip="Homepage"
+      [attr.data-tip]="menuItem.label"
       [routerLink]="menuItem.to"
     >
       <i [class]="menuItem?.icon || defaultMenuItemIcon"></i>

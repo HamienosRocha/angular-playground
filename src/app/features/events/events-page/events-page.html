@@ -1,0 +1,16 @@
+<app-tabs
+  tabsId="eventsPageTab"
+  [tabs]="tabs"
+>
+  <ng-template tabContent="output">
+    <app-output-event-page></app-output-event-page>
+  </ng-template>
+
+  <ng-template tabContent="rxjs">
+    <app-rxjs-event-page></app-rxjs-event-page>
+  </ng-template>
+
+  <ng-template tabContent="ngrx">
+    <app-ngrx-event-page></app-ngrx-event-page>
+  </ng-template>
+</app-tabs>

@@ -22,7 +22,7 @@ export class Sidebar {
 
   protected menu: Menu = [
     {
-      label: 'Homepage',
+      label: 'Home',
       to: '/',
       icon: 'fa-regular fa-house',
     },

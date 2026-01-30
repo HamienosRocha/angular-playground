@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomePage } from './views/home/home-page/home-page';
-import { eventRoutes } from './views/events/events.routes';
+import { HomePage } from '@features/home/home-page/home-page';
+import { eventRoutes } from '@features/events/events.routes';
 
 export const routes: Routes = [
   {
@@ -9,6 +9,8 @@ export const routes: Routes = [
       {
         path: '',
         component: HomePage,
+        title: 'Home',
+        data: { uniqueId: 'home' },
       },
       ...eventRoutes
     ]

@@ -1,0 +1,33 @@
+<div class="border-2 p-2">
+  <h3 class="mb-2">Parent Component</h3>
+
+  <div class="mt-2 mb-3">
+    Count: {{ count() }}
+
+    <div>
+      <button
+        class="btn"
+        (click)="decrement()"
+      >-</button>
+      <span class="px-2">{{ count() }}</span>
+      <button
+        class="btn"
+        (click)="increment()"
+      >+</button>
+    </div>
+  </div>
+
+  <div class="flex gap-x-3">
+    <app-output-event-comp-1
+      [count2]="count2()"
+      [parentCount]="count()"
+      (onCount)="onCount1($event)"
+    ></app-output-event-comp-1>
+
+    <app-output-event-comp-2
+      [count1]="count1()"
+      [parentCount]="count()"
+      (onCount)="onCount2($event)"
+    ></app-output-event-comp-2>
+  </div>
+</div>

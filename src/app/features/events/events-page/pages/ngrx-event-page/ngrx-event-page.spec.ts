@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainTab } from './main-tab';
+import { NgrxEventPage } from './ngrx-event-page';
 
-describe('MainTab', () => {
-  let component: MainTab;
-  let fixture: ComponentFixture<MainTab>;
+describe('NgrxEventPage', () => {
+  let component: NgrxEventPage;
+  let fixture: ComponentFixture<NgrxEventPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainTab]
+      imports: [NgrxEventPage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MainTab);
+    fixture = TestBed.createComponent(NgrxEventPage);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
