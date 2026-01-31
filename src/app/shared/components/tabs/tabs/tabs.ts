@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, DOCUMENT, inject, input, QueryList, signal } from '@angular/core';
+import { AfterViewInit, booleanAttribute, Component, ContentChildren, DOCUMENT, inject, input, QueryList, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { TabContentDirective } from '../tab-content.directive';
 import { iTabItem, iTabs } from '../../models';
@@ -18,6 +18,7 @@ export class Tabs implements AfterViewInit {
 
   public tabsId = input.required<string>();
   public tabs = input.required<iTabs>();
+  public destroyContentOnChange = input(false, { transform: booleanAttribute });
 
   protected selectedTab = signal<iTabItem | null>(null);
 

@@ -9,7 +9,12 @@
     (change)="changeTab(tab)"
   />
   <div class="tab-content border-base-300 bg-base-100 p-3">
+    @if (
+    !destroyContentOnChange() ||
+    destroyContentOnChange() && tab.id === selectedTab()?.id
+    ) {
     <ng-container *ngTemplateOutlet="getTemplateRef(tab.id)"></ng-container>
+    }
   </div>
   }
 </div>
