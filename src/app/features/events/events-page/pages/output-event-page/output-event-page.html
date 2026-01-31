@@ -2,7 +2,12 @@
   <h3 class="mb-2">Parent Component</h3>
 
   <div class="mt-2 mb-3">
-    Count: {{ count() }}
+
+    <app-triple-count-display
+      [count1]="count1()"
+      [count2]="count2()"
+      [parentCount]="count()"
+    />
 
     <div>
       <button
