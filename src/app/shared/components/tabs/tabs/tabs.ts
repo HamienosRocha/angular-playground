@@ -25,7 +25,6 @@ export class Tabs implements AfterViewInit {
   @ContentChildren(TabContentDirective) tabsContent: QueryList<TabContentDirective> | null = null;
 
   ngAfterViewInit(): void {
-    console.log(`ngAfterViewInit`);
     this.markCurrentTabOnInit();
   }
 
@@ -44,7 +43,6 @@ export class Tabs implements AfterViewInit {
     const inputTab = this.document.getElementById(this.getTabId(tab)) as HTMLInputElement | null;
     if (!inputTab) return;
 
-    console.log({ inputTab });
     inputTab.click();
   }
 
@@ -58,7 +56,6 @@ export class Tabs implements AfterViewInit {
 
   changeTab(tab: iTabItem) {
     this.selectTabId(tab);
-    console.log(`changeTab`);
     if (!tab?.path) return;
     this.router.navigate([`${tab.path}`]);
   }

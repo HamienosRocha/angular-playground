@@ -15,7 +15,7 @@ import { CountEventBusService } from './services/count-event-bus-service';
   templateUrl: './rxjs-event-page.html',
   styleUrl: './rxjs-event-page.css',
 })
-export class RxjsEventPage extends BaseEventComponent implements AfterContentInit {
+export class RxjsEventPage extends BaseEventComponent {
   count1 = signal(0);
   count2 = signal(0);
 
@@ -32,26 +32,16 @@ export class RxjsEventPage extends BaseEventComponent implements AfterContentIni
         if (id === 'comp1-event') {
           this.countEventService.onEvent(id).pipe(takeUntilDestroyed())
             .subscribe(count => {
-              console.log(`parent <== comp1: `, count);
               this.count1.set(count);
             });
 
         } else if (id === 'comp2-event') {
           this.countEventService.onEvent(id).pipe(takeUntilDestroyed())
             .subscribe(count => {
-              console.log(`parent <== comp2: `, count);
               this.count2.set(count);
             });
         }
       });
-  }
-
-  ngOnInit() {
-    console.log(`--init---`);
-  }
-
-  ngAfterContentInit(): void {
-
   }
 
   ngOnDestroy(): void {
@@ -114,7 +104,6 @@ export class RxJsEventComp1 extends BaseEventComponent implements OnDestroy {
         if (id === 'comp2-event') {
           this.countEventService.onEvent(id).pipe(takeUntilDestroyed())
             .subscribe(count => {
-              console.log(`comp1 <== comp2: `, count);
               this.count2.set(count);
             });
         }
@@ -123,7 +112,6 @@ export class RxJsEventComp1 extends BaseEventComponent implements OnDestroy {
     this.countEventService.onEvent('parent-event')
       .pipe(takeUntilDestroyed())
       .subscribe(count => {
-        console.log(`comp1 <== parent: `, count);
         this.parentCount.set(count);
       });
   }
@@ -187,7 +175,6 @@ export class RxJsEventComp2 extends BaseEventComponent {
       .pipe(takeUntilDestroyed())
       .subscribe({
         next: count => {
-          console.log(`comp2 <== parent: `, count);
           this.parentCount.set(count);
         }
       });
@@ -196,7 +183,6 @@ export class RxJsEventComp2 extends BaseEventComponent {
       .pipe(takeUntilDestroyed())
       .subscribe({
         next: count => {
-          console.log(`comp2 <== comp1: `, count);
           this.count1.set(count);
         }
       });

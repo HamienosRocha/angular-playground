@@ -37,7 +37,6 @@ export class TabsWithNewRoutes implements AfterViewInit {
     );
 
     this.router.resetConfig(this.router.config);
-    console.log(this.router.config);
   }
 
   selectTabId(id: iTabId) {
@@ -45,9 +44,8 @@ export class TabsWithNewRoutes implements AfterViewInit {
   }
 
   changeTab(tab: iTabItem) {
-    console.log({ tab });
     if (!tab?.path) return;
-    // this.router.navigate([`events/${tab.path}`]);
+
     this.router.navigate([`${tab.path}`]);
   }
 
