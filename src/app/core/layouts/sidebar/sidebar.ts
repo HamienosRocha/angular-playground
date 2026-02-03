@@ -31,5 +31,10 @@ export class Sidebar {
       to: 'events',
       icon: 'fa-solid fa-arrow-right-arrow-left'
     },
+    {
+      label: 'Forms',
+      to: 'forms',
+      icon: 'fa-solid fa-pencil'
+    },
   ];
 }

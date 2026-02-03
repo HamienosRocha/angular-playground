@@ -1,8 +1,8 @@
-import { Routes } from '@angular/router';
+import { iRoutes } from '@/shared/components/models/route.model';
 
 const EventsPage = () => import('./events-page/events-page').then(c => c.EventsPage);
 
-export const eventRoutes: Routes = [
+export const eventRoutes: iRoutes = [
   {
     path: 'events',
     title: 'Events',
