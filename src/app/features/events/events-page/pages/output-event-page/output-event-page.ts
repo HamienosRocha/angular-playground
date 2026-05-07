@@ -29,7 +29,7 @@ export class OutputEventPage extends BaseEventComponent {
   selector: 'app-output-event-comp-1',
   imports: [TripleCountDisplay],
   template: `
-    <div [class]="defaultComponentClass">
+    <div [class]="defaultComponentClass('component1')">
       <h5 class="mb-2">
         Child Component 1
       </h5>
@@ -69,7 +69,7 @@ export class OutputEventComp1 extends BaseEventComponent {
   selector: 'app-output-event-comp-2',
   imports: [TripleCountDisplay],
   template: `
-    <div [class]="defaultComponentClass">
+    <div [class]="defaultComponentClass('component2')">
       <h5 class="mb-2">
         Child Component 2
       </h5>

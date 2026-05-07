@@ -4,3 +4,9 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, nord, dracula;
 }
+
+@theme static {
+--color-parent-event-comp: oklch(63.7% 0.237 25.331);
+--color-event-comp-1: oklch(62.3% 0.214 259.815);
+--color-event-comp-2: oklch(69.6% 0.17 162.48);
+}

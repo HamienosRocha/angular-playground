@@ -67,7 +67,7 @@ export class RxjsEventPage extends BaseEventComponent {
   selector: 'app-rxjs-event-comp-1',
   imports: [TripleCountDisplay],
   template: `
-    <div [class]="defaultComponentClass">
+    <div [class]="defaultComponentClass('component1')">
       <h5 class="mb-2">
         Child Component 1
       </h5>
@@ -139,7 +139,7 @@ export class RxJsEventComp1 extends BaseEventComponent implements OnDestroy {
   selector: 'app-rxjs-event-comp-2',
   imports: [TripleCountDisplay],
   template: `
-    <div [class]="defaultComponentClass">
+    <div [class]="defaultComponentClass('component2')">
       <h5 class="mb-2">
         Child Component 2
       </h5>

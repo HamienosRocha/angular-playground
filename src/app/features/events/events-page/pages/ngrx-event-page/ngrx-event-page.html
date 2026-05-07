@@ -1,24 +1,13 @@
-<div class="border-2 p-2">
+<div class="border-2 p-2 border-parent-event-comp">
   <h3 class="mb-2">Parent Component</h3>
 
   <div class="mt-2 mb-3">
-
-    <app-triple-count-display
-      [count1]="count1()"
-      [count2]="count2()"
-      [parentCount]="count()"
-    />
+    <app-triple-count-display [count1]="count1()" [count2]="count2()" [parentCount]="count()" />
 
     <div>
-      <button
-        class="btn"
-        (click)="decrement()"
-      >-</button>
+      <button class="btn" (click)="decrement()">-</button>
       <span class="px-2">{{ count() }}</span>
-      <button
-        class="btn"
-        (click)="increment()"
-      >+</button>
+      <button class="btn" (click)="increment()">+</button>
     </div>
   </div>
 

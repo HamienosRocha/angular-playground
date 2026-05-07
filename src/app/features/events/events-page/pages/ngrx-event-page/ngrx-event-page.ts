@@ -38,7 +38,7 @@ export class NgrxEventPage extends BaseEventComponent {
   selector: 'app-ngrx-event-comp-1',
   imports: [TripleCountDisplay],
   template: `
-    <div [class]="defaultComponentClass">
+    <div [class]="defaultComponentClass('component1')">
       <h5 class="mb-2">
         Child Component 1
       </h5>
@@ -77,7 +77,7 @@ export class NgrxEventComp1 extends BaseEventComponent {
   selector: 'app-ngrx-event-comp-2',
   imports: [TripleCountDisplay],
   template: `
-    <div [class]="defaultComponentClass">
+    <div [class]="defaultComponentClass('component2')">
       <h5 class="mb-2">
         Child Component 2
       </h5>
