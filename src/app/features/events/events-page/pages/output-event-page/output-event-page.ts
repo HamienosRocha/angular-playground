@@ -16,6 +16,14 @@ export class OutputEventPage extends BaseEventComponent {
   count1 = signal(0);
   count2 = signal(0);
 
+  override increment() {
+    this.count.set(this.count() + 1);
+  }
+
+  override decrement() {
+    this.count.set(this.count() - 1);
+  }
+
   protected onCount1(count: number) {
     this.count1.set(count);
   }
